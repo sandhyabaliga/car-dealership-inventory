@@ -46,10 +46,7 @@ Install the following before running the application:
 git clone https://github.com/sandhyabaliga/car-dealership-inventory.git
 cd car-dealership-inventory
 ```
-
 ### 2. Set up the backend
-
-Open a terminal in the project root and run:
 
 Open a terminal in the project root and run:
 
@@ -68,28 +65,11 @@ Do not commit `.env` files or real secrets to GitHub.
 
 The backend API runs at `http://localhost:3000` with the default local configuration.
 
-Create a local `.env` file using `.env.example`, if the project includes one. Configure the required environment variables, including the database connection and JWT secret. Use your own development credentials for any administrator account.
-
-Do not commit `.env` files or real secrets to GitHub.
-
-Generate the Prisma client and initialize the database using the commands supported by the project's Prisma configuration. If the database has not yet been initialized, verify the configured database provider and schema before running the appropriate Prisma setup command.
-
-Start the backend development server:
-
-```bash
-
-npm.cmd run build
-node dist/server.js
-
-```
-
-The backend API is expected to run at `http://localhost:3000` when using the default local configuration.
-
 ### 3. Set up the frontend
 
-Open a second terminal in the project root:
+Open a second terminal in the project root and run:
 
-```bash
+```powershell
 cd frontend
 npm install
 npm run dev
@@ -97,7 +77,8 @@ npm run dev
 
 Open the local URL displayed by Vite in the terminal, usually `http://localhost:5173`.
 
-Keep both development servers running while using the application.
+Keep both the backend and frontend running while using the application.
+
 
 ## Testing and Build Verification
 
