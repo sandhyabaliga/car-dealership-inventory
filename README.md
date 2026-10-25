@@ -65,7 +65,10 @@ Generate the Prisma client and initialize the database using the commands suppor
 Start the backend development server:
 
 ```bash
-npm run dev
+
+npm.cmd run build
+node dist/server.js
+
 ```
 
 The backend API is expected to run at `http://localhost:3000` when using the default local configuration.
