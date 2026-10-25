@@ -42,7 +42,7 @@ Install the following before running the application:
 
 ### 1. Clone the repository
 
-```bash
+```powershell
 git clone https://github.com/sandhyabaliga/car-dealership-inventory.git
 cd car-dealership-inventory
 ```
@@ -51,10 +51,22 @@ cd car-dealership-inventory
 
 Open a terminal in the project root and run:
 
-```bash
+Open a terminal in the project root and run:
+
+```powershell
 cd backend
 npm install
+npx prisma generate
+npx prisma migrate deploy
+npm run build
+node dist/server.js
 ```
+
+Before starting the backend, create the required `.env` file and configure `DATABASE_URL` and `JWT_SECRET` according to the project's Prisma configuration. Use your own development credentials for any administrator account.
+
+Do not commit `.env` files or real secrets to GitHub.
+
+The backend API runs at `http://localhost:3000` with the default local configuration.
 
 Create a local `.env` file using `.env.example`, if the project includes one. Configure the required environment variables, including the database connection and JWT secret. Use your own development credentials for any administrator account.
 
