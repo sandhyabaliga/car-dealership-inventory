@@ -61,3 +61,56 @@ describe('POST /api/auth/register', () => {
     expect(shortPassword.status).toBe(400);
   });
 });
+
+describe('POST /api/auth/login', () => {
+  it('logs in a registered user and returns a token', async () => {
+    await request(app)
+      .post('/api/auth/register')
+      .send({
+        email: 'login@example.com',
+        password: 'StrongPass123!',
+      });
+
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({
+        email: 'login@example.com',
+        password: 'StrongPass123!',
+      });
+
+    expect(response.status).toBe(200);
+    expect(response.body.token).toEqual(expect.any(String));
+    expect(response.body.user.email).toBe('login@example.com');
+    expect(response.body.user).not.toHaveProperty('passwordHash');
+  });
+
+  it('rejects an incorrect password', async () => {
+    await request(app)
+      .post('/api/auth/register')
+      .send({
+        email: 'wrongpass@example.com',
+        password: 'StrongPass123!',
+      });
+
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({
+        email: 'wrongpass@example.com',
+        password: 'WrongPass123!',
+      });
+
+    expect(response.status).toBe(401);
+  });
+
+  it('rejects login for an unregistered email', async () => {
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({
+        email: 'unknown@example.com',
+        password: 'StrongPass123!',
+      });
+
+    expect(response.status).toBe(401);
+  });
+});
+
