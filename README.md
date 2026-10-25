@@ -120,11 +120,19 @@ The backend provides endpoints for user registration and login, vehicle listing 
 
 Authentication and authorization are used to restrict administrator-only inventory operations.
 
-## AI Usage and Development Process
+## My AI Usage
 
-AI assistance was used during development to understand test-driven development (TDD), troubleshoot TypeScript and backend errors, implement and refine application functionality, and resolve test failures.
+### AI Tool Used
+I used ChatGPT as an AI assistant during the development of this project.
 
-The `PROMPTS.md` file should contain genuine AI conversation links or relevant original prompt and troubleshooting logs that document the development process. Refer to that file for the supporting development record.
+### How I Used AI
+I used ChatGPT to understand test-driven development (TDD), plan implementation steps, troubleshoot TypeScript compilation errors, resolve backend test failures, and verify the frontend and backend builds. I also used it to help improve project documentation and understand the assignment requirements.
+
+### Reflection on AI Assistance
+AI assistance helped me work through errors more efficiently and understand possible solutions when I encountered difficulties. I learned that AI-generated suggestions must be checked against the actual code and validated by running tests and builds. I used the debugging process to improve my understanding of TypeScript, backend development, and testing rather than relying on suggestions without verification.
+
+### AI Conversation Records
+Refer to the root `PROMPTS.md` file for the available original ChatGPT conversation links or transcripts.
 
 ## Security Notes
 
